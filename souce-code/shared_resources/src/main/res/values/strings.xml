@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">SimpleWear</string>
+
+    <string name="not_channel_name_torch">Flashlight notification</string>
+
+    <string name="cat_title_permissions">Permissions</string>
+
+    <string name="action_wifi">WiFi</string>
+    <string name="action_bt">Bluetooth</string>
+    <string name="action_mobiledata">Mobile Data</string>
+    <string name="action_location">Location</string>
+
+    <string name="locationstate_sensorsonly">Sensors Only</string>
+    <string name="locationstate_batterysaving">Battery Saving</string>
+    <string name="locationstate_highaccuracy">High Accuracy</string>
+
+    <string name="action_torch">Flashlight</string>
+    <string name="not_torch_turnoff_summary">Tap to turn off</string>
+
+    <string name="action_lockscreen">Lock Screen</string>
+    <string name="action_volume">Volume</string>
+    <string name="action_dnd">Do not Disturb</string>
+
+    <string name="dndstate_priority">Priority only</string>
+    <string name="dndstate_alarms">Alarms only</string>
+    <string name="dndstate_silence">Total silence</string>
+
+    <string name="action_ringer">Ringer</string>
+    <string name="ringerstate_vib">Vibrate</string>
+    <string name="ringerstate_sound">Sound</string>
+    <string name="ringerstate_silent">Silent</string>
+
+    <string name="state_off">Off</string>
+    <string name="state_on">On</string>
+
+    <string name="volstate_muted">Muted</string>
+
+    <string name="action_musicplayback">Play Media</string>
+    <string name="title_media_controller">Media Controller</string>
+    <string name="action_sleeptimer">Sleep Timer</string>
+    <string name="title_settings">Settings</string>
+
+    <string name="action_apps">Apps</string>
+    <string name="action_phone">Phone</string>
+
+    <string name="title_callcontroller">Call Controller</string>
+    <string name="message_callactive">Call in progress…</string>
+    <string name="action_hangup">Hangup</string>
+
+    <string name="action_brightness">Brightness</string>
+    <string name="action_hotspot">WiFi Hotspot</string>
+
+</resources>

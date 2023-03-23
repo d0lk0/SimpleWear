@@ -1,0 +1,58 @@
+<resources>
+
+    <string name="permission_camera_enabled">Camera permission granted.</string>
+    <string name="permission_camera_disabled">Camera permission disabled. Please click to enable controlling flashlight from WearOS device</string>
+
+    <string name="device_admin_description">Allows you to turn of your screen and lock your device from your WearOS device</string>
+    <string name="permission_admin_enabled">Device admin enabled</string>
+    <string name="permission_admin_disabled">Not enabled as device admin. Please click to enable locking screen from your WearOS device</string>
+
+    <string name="permission_dnd_enabled">Do not Disturb access enabled</string>
+    <string name="permission_dnd_disabled">Do not Disturb access disabled. Please click to enable changing Do not Disturb setting from your WearOS device</string>
+
+    <string name="permission_title_pairdevice">Pair with WearOS device</string>
+    <string name="permission_pairdevice_enabled">App is paired with WearOS device</string>
+    <string name="permission_pairdevice_disabled">WearOS device not paired with app. Please click to pair device. This is needed to start the media player, launch apps and/or manage calls</string>
+    <string name="message_watchbtdiscover">Please enable Bluetooth discovery on your WearOS device</string>
+    <string name="message_watchbttimeout">Please ensure Bluetooth is enabled on your WearOS device</string>
+    <string name="message_nodevices_found">No devices found</string>
+
+    <string name="permission_title_notifservice">Media Player</string>
+    <string name="prompt_notifservice_enabled">Notification access enabled</string>
+    <string name="prompt_notifservice_disabled">Notification access not enabled. Please click to enable media player access</string>
+    <string name="not_channel_name_mediacontroller" translatable="false">@string/title_media_controller</string>
+    <string name="not_title_mediacontroller_running">Media Controller active</string>
+    <string name="not_content_mediacontroller_tap2disable">@string/not_torch_turnoff_summary</string>
+    <string name="action_disconnect">Disconnect</string>
+    <string name="action_turnoff">Turn off</string>
+
+    <string name="permission_title_uninstall">Uninstall</string>
+    <string name="permission_title_deactivate_uninstall">Deactivate and uninstall</string>
+    <string name="message_deactivate_deviceadmin">To uninstall the app, click here to deactivate device admin access or deactivate from "Settings -> Security -> Device admin (apps)"</string>
+
+    <string name="not_channel_name_callcontroller" translatable="false">@string/title_callcontroller</string>
+    <string name="not_title_callcontroller_running">Call Controller active</string>
+    <string name="error_permissiondenied">Permission denied</string>
+    <string name="permission_callmanager_enabled">Phone state access enabled</string>
+    <string name="permission_callmanager_disabled">Phone state access disabled</string>
+    <string name="action_mute">Mute</string>
+    <string name="action_unmute">Unmute</string>
+    <string name="action_speakerphone_off">Speakerphone off</string>
+    <string name="action_speakerphone_on">Speakerphone on</string>
+
+    <string name="preference_title_mediabridge">Bridge media notifications</string>
+    <string name="preference_summary_mediabridge">Show media notification on watch when there is an active media session</string>
+    <string name="preference_title_callbridge">Bridge call notifications</string>
+    <string name="preference_summary_callbridge">Show call notification on watch when there is an active call</string>
+
+    <string name="preference_title_wearsettings">Location and Mobile Data</string>
+    <string name="preference_summary_wearsettings_notinstalled">SimpleWear helper app required to toggle system settings</string>
+    <string name="preference_summary_wearsettings_installed">SimpleWear helper app installed</string>
+
+    <string name="url_wearsettings_helper" translatable="false">https://github.com/SimpleAppProjects/SimpleWear/wiki/SimpleWear-Settings-helper</string>
+
+    <string name="permission_title_systemsettings">System Settings</string>
+    <string name="permission_systemsettings_enabled">Modify System Settings permission granted.</string>
+    <string name="permission_systemsettings_disabled">Modify System Settings permission disabled. Please click to enable controlling brightness and WiFi hotspot from WearOS device</string>
+
+</resources>

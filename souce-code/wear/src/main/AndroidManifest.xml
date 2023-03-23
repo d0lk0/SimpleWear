@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.thewizrd.simplewear">
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <uses-feature android:name="android.hardware.type.watch" />
+    <uses-feature
+        android:name="android.hardware.wifi"
+        android:required="false" />
+
+    <queries>
+        <package android:name="com.thewizrd.simplesleeptimer" />
+        <package android:name="com.thewizrd.simplesleeptimer.debug" />
+    </queries>
+
+    <application
+        android:name=".App"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/WearAppTheme.Launcher"
+        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        <uses-library
+            android:name="com.google.android.wearable"
+            android:required="true" />
+
+        <!--
+               Set to true if your app is Standalone, that is, it does not require the handheld
+               app to run.
+        -->
+        <meta-data
+            android:name="com.google.android.wearable.standalone"
+            android:value="false" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <activity
+            android:name=".PhoneSyncActivity"
+            android:launchMode="singleInstance"
+            android:theme="@style/WearAppTheme.Launcher"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DashboardActivity"
+            android:label="@string/title_activity_dashboard"
+            android:launchMode="singleInstance"
+            android:theme="@style/WearAppTheme" />
+        <activity
+            android:name=".ValueActionActivity"
+            android:launchMode="singleInstance"
+            android:theme="@style/WearAppTheme" />
+
+        <activity-alias
+            android:name=".MediaControllerActivity"
+            android:targetActivity=".MediaPlayerListActivity"
+            android:icon="@drawable/ic_play_circle_simpleblue"
+            android:label="@string/title_media_controller"
+            android:exported="true"
+            android:launchMode="singleInstance"
+            android:parentActivityName=".DashboardActivity"
+            android:theme="@style/WearAppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
+        <activity
+            android:name=".MediaPlayerListActivity"
+            android:launchMode="singleInstance"
+            android:theme="@style/WearAppTheme" />
+        <activity
+            android:name=".AppLauncherActivity"
+            android:launchMode="singleInstance"
+            android:theme="@style/WearAppTheme" />
+        <activity
+            android:name=".media.MediaPlayerActivity"
+            android:launchMode="singleInstance"
+            android:theme="@style/WearAppTheme" />
+        <activity
+            android:name=".CallManagerActivity"
+            android:icon="@drawable/ic_phone_24dp"
+            android:label="@string/title_callcontroller"
+            android:theme="@style/WearAppTheme"
+            android:launchMode="singleInstance"
+            android:parentActivityName=".DashboardActivity">
+            <!--<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
+        </activity>
+
+        <activity
+            android:name=".preferences.DashboardTileConfigActivity"
+            android:launchMode="singleInstance"
+            android:theme="@style/WearAppTheme" />
+
+        <activity
+            android:name=".preferences.DashboardConfigActivity"
+            android:launchMode="singleInstance"
+            android:theme="@style/WearAppTheme" />
+
+        <service
+            android:name=".wearable.WearableDataListenerService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.android.gms.wearable.MESSAGE_RECEIVED" />
+                <action android:name="com.google.android.gms.wearable.DATA_CHANGED" />
+                <action android:name="com.google.android.gms.wearable.CAPABILITY_CHANGED" />
+
+                <data
+                    android:host="*"
+                    android:scheme="wear"
+                    android:path="/bluetooth/discoverable" />
+                <data
+                    android:host="*"
+                    android:scheme="wear"
+                    android:path="/start-activity" />
+                <data
+                    android:host="*"
+                    android:scheme="wear"
+                    android:path="/apps/settings/icon" />
+                <data
+                    android:host="*"
+                    android:scheme="wear"
+                    android:path="/incallui/bridge" />
+                <data
+                    android:host="*"
+                    android:scheme="wear"
+                    android:path="/media/playback_state/bridge" />
+            </intent-filter>
+        </service>
+
+        <service
+            android:icon="@mipmap/ic_launcher"
+            android:label="@string/title_activity_dashboard"
+            android:permission="com.google.android.wearable.permission.BIND_TILE_PROVIDER"
+            android:exported="true"
+            android:name=".wearable.DashboardTileProviderService">
+            <intent-filter>
+                <action android:name="com.google.android.clockwork.ACTION_TILE_UPDATE_REQUEST" />
+            </intent-filter>
+
+            <meta-data
+                android:name="com.google.android.clockwork.tiles.PREVIEW"
+                android:resource="@drawable/tile_preview" />
+        </service>
+
+        <service
+            android:icon="@drawable/ic_play_circle_simpleblue"
+            android:label="@string/title_media_controller"
+            android:permission="com.google.android.wearable.permission.BIND_TILE_PROVIDER"
+            android:exported="true"
+            android:name=".wearable.MediaPlayerTileProviderService">
+            <intent-filter>
+                <action android:name="com.google.android.clockwork.ACTION_TILE_UPDATE_REQUEST" />
+            </intent-filter>
+
+            <meta-data
+                android:name="com.google.android.clockwork.tiles.PREVIEW"
+                android:resource="@drawable/mediatile_preview" />
+        </service>
+
+    </application>
+
+</manifest>

@@ -1,0 +1,2 @@
+include ':mobile', ':wear', ':shared_resources', ':unofficialtileapi'
+include ':wearsettings'
